@@ -41,7 +41,7 @@
                     @csrf
                     <div class="track-input-group">
                         <label for="tracking_number" class="track-label">
-                            AWB / Tracking Number <span class="required">*</span>
+                            Tracking Number <span class="required">*</span>
                         </label>
                         <div class="track-input-row">
                             <div class="track-input-wrap">
@@ -51,7 +51,7 @@
                                     id="tracking_number"
                                     name="tracking_number"
                                     value="{{ old('tracking_number') }}"
-                                    placeholder="e.g. SSL-A1B2C3D4"
+                                    placeholder="e.g. SNT1234567890"
                                     autocomplete="off"
                                     required
                                     class="track-input {{ $errors->has('tracking_number') ? 'is-error' : '' }}"

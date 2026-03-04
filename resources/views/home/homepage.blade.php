@@ -52,10 +52,12 @@
                     <span>Real-time updates worldwide</span>
                 </div>
             </div>
-            <form action="{{ url('/track-now') }}" method="GET" class="track-form">
+               <form action="{{ route('shipment.track') }}" method="POST" class="track-form">
+                    @csrf
                 <div class="track-input-wrap">
                     <i class="fas fa-barcode"></i>
-                    <input type="text" name="tracking_number" placeholder="Enter tracking number, waybill or BOL…" required>
+                    <input type="text"  name="tracking_number"
+                                    value="{{ old('tracking_number') }}" placeholder="Enter tracking number" required>
                 </div>
                 <button type="submit" class="btn btn-primary track-submit">
                     <i class="fas fa-search"></i> Track Now
