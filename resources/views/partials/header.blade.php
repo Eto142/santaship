@@ -56,13 +56,14 @@
 
         /* ---- Reset ---- */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 16px; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; max-width: 100%; }
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             color: var(--text);
             background: var(--white);
             overflow-x: hidden;
+            max-width: 100%;
         }
         a { text-decoration: none; color: inherit; transition: var(--transition); }
         img { max-width: 100%; display: block; height: auto; }

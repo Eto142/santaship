@@ -508,6 +508,17 @@
 =================================================== --}}
 <style>
 /* ————————————————————————————
+   GLOBAL OVERFLOW GUARD (prevents horizontal shake)
+———————————————————————————— */
+section, .hero, .quick-actions, .stats-band,
+.about-section, .services-section, .why-section,
+.testimonials-section, .cta-band {
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+}
+
+/* ————————————————————————————
    HERO SECTION
 ———————————————————————————— */
 .hero {
@@ -692,14 +703,14 @@
 }
 .about-img-main img { width: 100%; height: 450px; object-fit: cover; }
 .about-img-accent {
-    position: absolute; bottom: -30px; right: -20px;
+    position: absolute; bottom: -30px; right: 0;
     width: 200px; border-radius: var(--radius-md); overflow: hidden;
     box-shadow: var(--shadow-xl);
     border: 4px solid var(--white);
 }
 .about-img-accent img { width: 100%; height: 180px; object-fit: cover; }
 .about-experience-badge {
-    position: absolute; top: 24px; right: -10px;
+    position: absolute; top: 24px; right: 0;
     background: var(--accent);
     padding: 20px 24px; border-radius: var(--radius-md);
     text-align: center; box-shadow: var(--shadow-lg);
@@ -888,20 +899,51 @@
     .stat-item:last-child, .stat-item:nth-child(2) { border-bottom: none; }
 }
 @media (max-width: 768px) {
+    /* Prevent AOS slide animations from causing horizontal overflow */
+    [data-aos='fade-right'],
+    [data-aos='fade-left'] {
+        transform: none !important;
+    }
     .hero-inner { padding-top: 72px; }
+    .hero-trust { gap: 16px; }
+    .trust-item { font-size: 12px; }
     .qa-grid { grid-template-columns: 1fr; }
     .qa-card { border-right: none; border-bottom: 1px solid var(--border); }
     .services-grid { grid-template-columns: 1fr; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .why-cards { grid-template-columns: 1fr 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-track-card { padding: 24px; }
+    .about-visual { overflow: hidden; }
+    .about-img-main { max-width: 100%; }
+    .about-img-main img { height: 300px; }
 }
 @media (max-width: 480px) {
-    .hero-title { font-size: 36px; }
+    /* Disable ALL AOS slide/zoom animations that cause shake */
+    [data-aos] {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    .hero-title { font-size: 32px; }
+    .hero-desc { font-size: 15px; }
     .hero-actions { flex-direction: column; }
-    .why-cards { grid-template-columns: 1fr 1fr; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    .hero-trust { gap: 12px; }
+    .hero-track-card { padding: 20px 16px; border-radius: var(--radius-lg); }
+    .track-card-header { gap: 12px; margin-bottom: 20px; }
+    .track-card-header i { font-size: 22px; padding: 10px; }
+    .why-cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .why-stat-card { padding: 20px 12px; }
     .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-number { font-size: 40px; }
     .cta-band-actions { flex-direction: column; align-items: center; }
+    .cta-band-actions .btn { width: 100%; justify-content: center; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-stars { margin-left: 0; width: 100%; margin-top: 8px; }
+    .testimonial-author { flex-wrap: wrap; }
+    .qa-card { padding: 28px 20px; }
+    .service-card-body { padding: 20px; }
 }
 </style>
 

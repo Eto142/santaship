@@ -219,7 +219,13 @@
 ====================================================== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init({ once: true, duration: 700, offset: 60 });
+    AOS.init({
+        once: true,
+        duration: 700,
+        offset: 60,
+        // Disable slide-in animations on mobile to prevent horizontal scroll shake
+        disable: function () { return window.innerWidth < 768; }
+    });
 </script>
 
 </body>
