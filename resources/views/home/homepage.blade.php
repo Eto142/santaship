@@ -18,7 +18,7 @@
         <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
             <div class="hero-badge">
                 <i class="fas fa-globe-americas"></i>
-                Trusted Worldwide
+                Trusted Worldwide Since 2013
             </div>
             <h1 class="hero-title">
                 Your Global<br>
