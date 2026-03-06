@@ -32,16 +32,16 @@
                         <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h4>Head Office</h4>
-                            <p>Santaship Logistics Company Limited<br>West Africa Operations Centre</p>
+                            <p>Santaship Logistics Company Limited<br>720 Grand Blvd, Deer Park, NY 11729, USA</p>
                         </div>
                     </div>
-                    <div class="contact-detail-item">
+                    {{-- <div class="contact-detail-item">
                         <div class="detail-icon"><i class="fas fa-phone-alt"></i></div>
                         <div>
                             <h4>Phone / WhatsApp</h4>
                             <p><a href="tel:+2348000000000">+234 800 000 0000</a></p>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="contact-detail-item">
                         <div class="detail-icon"><i class="fas fa-envelope"></i></div>
                         <div>
@@ -53,7 +53,7 @@
                         <div class="detail-icon"><i class="fas fa-clock"></i></div>
                         <div>
                             <h4>Working Hours</h4>
-                            <p>Monday – Friday: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 2:00 PM</p>
+                            <p>24/7: 8:00 AM – 6:00 PM<br>Saturday: 9:00 AM – 2:00 PM</p>
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                                     <i class="fas fa-user input-icon"></i>
                                     <input type="text" id="text-440" name="text-440"
                                         value="{{ old('text-440') }}"
-                                        placeholder="John Doe"
+                                        placeholder="Enter your full name"
                                         class="{{ $errors->has('text-440') ? 'is-error' : '' }}"
                                         required>
                                 </div>
@@ -102,7 +102,7 @@
                                     <i class="fas fa-phone input-icon"></i>
                                     <input type="tel" id="phone" name="phone"
                                         value="{{ old('phone') }}"
-                                        placeholder="+1 234 567 8900"
+                                        placeholder="Enter your phone number"
                                         class="{{ $errors->has('phone') ? 'is-error' : '' }}"
                                         required>
                                 </div>
@@ -118,7 +118,7 @@
                                 <i class="fas fa-envelope input-icon"></i>
                                 <input type="email" id="email" name="email"
                                     value="{{ old('email') }}"
-                                    placeholder="john@example.com"
+                                    placeholder="Enter your email address"
                                     class="{{ $errors->has('email') ? 'is-error' : '' }}"
                                     required>
                             </div>
@@ -128,7 +128,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="shipment">AWB / Tracking Number</label>
+                            <label for="shipment">Tracking Number</label>
                             <div class="input-wrap">
                                 <i class="fas fa-barcode input-icon"></i>
                                 <input type="text" id="shipment" name="shipment"
