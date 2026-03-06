@@ -28,7 +28,7 @@ class ContactMail extends Mailable
     public function build()
     {
         $subject = $this->toUser
-            ? 'Thank you for contacting brigomaplogistics'
+            ? 'Thank you for contacting santashiplogistics'
             : 'New Contact Form Message';
 
         return $this->subject($subject)

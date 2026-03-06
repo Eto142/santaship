@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ $toUser ? 'Thank you for contacting brigomaplogistics' : 'New Contact Message' }}</title>
+    <title>{{ $toUser ? 'Thank you for contacting santashiplogistics' : 'New Contact Message' }}</title>
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; color: #333; }
         .email-wrapper { max-width: 600px; margin: 20px auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
@@ -21,15 +21,15 @@
     <div class="email-wrapper">
         <!-- Header with logo -->
         <div class="header">
-          <img src="{{ asset('logo.png') }}" alt="brigomaplogistics Logo">
-            <h1>{{ $toUser ? 'Thank You for Contacting brigomaplogistics' : 'New Contact Form Submission' }}</h1>
+          <img src="{{ asset('logo.png') }}" alt="santashiplogistics Logo">
+            <h1>{{ $toUser ? 'Thank You for Contacting santashiplogistics' : 'New Contact Form Submission' }}</h1>
         </div>
 
         <!-- Body -->
         <div class="body">
             @if($toUser)
                 <h2>Hello {{ $data['name'] }},</h2>
-                <p>Thank you for reaching out to brigomaplogistics. We have received your message and will respond as soon as possible.</p>
+                <p>Thank you for reaching out to santashiplogistics. We have received your message and will respond as soon as possible.</p>
                 <p><strong>Your Message:</strong></p>
                 <div class="message-box">{{ $data['message'] }}</div>
             @else
@@ -45,8 +45,8 @@
 
         <!-- Footer -->
         <div class="footer">
-            &copy; {{ date('Y') }} brigomaplogistics. All rights reserved.<br>
-            <a href="https://brigomaplogistics.org">www.brigomaplogistics.org</a>
+            &copy; {{ date('Y') }} santashiplogistics. All rights reserved.<br>
+            <a href="https://santashiplogistics.org">www.santashiplogistics.org</a>
         </div>
     </div>
 </body>

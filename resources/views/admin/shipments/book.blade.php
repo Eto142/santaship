@@ -268,7 +268,7 @@
 
         <div class="text-end mb-4">
             <button class="btn btn-primary px-5 py-2">
-                <i class="fas fa-save me-2"></i> Book Shipment
+                <i class="fas fa-save me-2"></i> Create Tracking Order
             </button>
         </div>
 

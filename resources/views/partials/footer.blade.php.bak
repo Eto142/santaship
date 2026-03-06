@@ -22,7 +22,7 @@
 			<div class="footHead" style="color: #fff;">Contact</div>
 			<div style="color: #fff; font-size: 15px;">
 				
-				<div><strong>Email:</strong> <a href="mailto:support@brigomaplogistics.com" style="color: #fff;">support@brigomaplogistics.com</a></div>
+				<div><strong>Email:</strong> <a href="mailto:support@santashiplogistics.org" style="color: #fff;">support@santashiplogistics.org</a></div>
 			</div>
 		</div>
 		
@@ -40,7 +40,7 @@
 </div>
 
 <ul class="social mobile" style="background: none;">
-<li><a target="blank" href="#" title="Linkedin" class="lnk"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/linkedin.png"></a></li><li><a target="blank" href="https://www.facebook.com/brigomaplogistics/" title="Facebook" class="fb"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/facebook.png"></a></li><li><a target="blank" href="https://www.instagram.com/brigomaplogistics/" title="Instagram" class="inst"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/instagram.png"></a></li><li><a target="blank" href="https://x.com/brigomap_logistics" title="X" class="twt"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/x.png"></a></li><li><a target="blank" href="https://youtube.com/@brigomaplogisticspvtltd" title="Youtube" class="ytb"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/youtube.png"></a></li>        </ul>
+<li><a target="blank" href="#" title="Linkedin" class="lnk"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/linkedin.png"></a></li><li><a target="blank" href="https://www.facebook.com/santashiplogistics/" title="Facebook" class="fb"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/facebook.png"></a></li><li><a target="blank" href="https://www.instagram.com/santashiplogistics/" title="Instagram" class="inst"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/instagram.png"></a></li><li><a target="blank" href="https://x.com/brigomap_logistics" title="X" class="twt"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/x.png"></a></li><li><a target="blank" href="https://youtube.com/@santashiplogisticspvtltd" title="Youtube" class="ytb"><img src="wp-content/themes/Netstager_Creative_Suite-3.0/images/youtube.png"></a></li>        </ul>
 </div>
 </div>
 <div class="footerBtmbt">
@@ -61,7 +61,7 @@ Brigomap Logistics<br>
 <div class="footerbtbox">
 <div class="footbxLeft">Mail Us</div>
 <div class="footbxRight">
-<a href="mailto:support@brigomaplogistics.com" title="support@brigomaplogistics.com" class="emails">support@brigomaplogistics.com</a>                                </div>
+<a href="mailto:support@santashiplogistics.org" title="support@santashiplogistics.org" class="emails">support@santashiplogistics.org</a>                                </div>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@ wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
 /* <![CDATA[ */
 var wpcf7 = {
 "api": {
-"root": "https:\/\/brigomaplogistics.com\/wp-json\/",
+"root": "https:\/\/santashiplogistics.org\/wp-json\/",
 "namespace": "contact-form-7\/v1"
 }
 };
@@ -109,7 +109,7 @@ var wpcf7 = {
 <script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/index1b46.js?ver=6.1.4" id="contact-form-7-js"></script>
 <script type="text/javascript" id="wpcf7-redirect-script-js-extra">
 /* <![CDATA[ */
-var wpcf7r = {"ajax_url":"https://brigomaplogistics.com/wp-admin/admin-ajax.php"};
+var wpcf7r = {"ajax_url":"https://santashiplogistics.org/wp-admin/admin-ajax.php"};
 //# sourceURL=wpcf7-redirect-script-js-extra
 /* ]]> */
 </script>
@@ -220,6 +220,6 @@ setAnimation($(this));
 </script>
 </body>
 
-<!-- Mirrored from brigomaplogistics.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 16:46:32 GMT -->
+<!-- Mirrored from santashiplogistics.org/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 20 Feb 2026 16:46:32 GMT -->
 </html><!-- WP Fastest Cache file was created in 37.187 seconds, on February 19, 2026 @ 1:17 pm -->
 @endverbatim

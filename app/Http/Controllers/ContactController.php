@@ -20,7 +20,7 @@ class ContactController extends Controller
     //     ]);
 
     //     // Send email
-    //     Mail::to('support@brigomaplogistics.com')->send(new ContactMail($request->all()));
+    //     Mail::to('support@santashiplogistics.org')->send(new ContactMail($request->all()));
 
     //     // Redirect back with success message
     //     return back()->with('success', 'Your message has been sent successfully.');
@@ -46,8 +46,8 @@ class ContactController extends Controller
             'message' => $request->input('message'),
         ];
 
-        // Send email to support@brigomaplogistics.com
-        Mail::to('support@brigomaplogistics.com')->send(new ContactMail($data));
+        // Send email to support@santashiplogistics.org
+        Mail::to('support@santashiplogistics.org')->send(new ContactMail($data));
 
         return back()->with('success', 'Your message has been sent successfully.');
     }
