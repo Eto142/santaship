@@ -83,11 +83,11 @@
             <div class="action-grid">
                 <a href="{{ route('admin.book') }}" class="action-btn">
                     <i class="bi bi-plus-circle"></i>
-                    <span>Book Shipment</span>
+                    <span>Create Tracking ID</span>
                 </a>
                 <a href="{{ route('admin.shipments') }}" class="action-btn">
                     <i class="bi bi-box-seam"></i>
-                    <span>View All Shipments</span>
+                    <span>View All Tracking IDs</span>
                 </a>
                 <a href="{{ route('admin.send.email') }}" class="action-btn">
                     <i class="bi bi-envelope"></i>
@@ -103,11 +103,10 @@
         <!-- Recent Shipments Table -->
         <div class="table-card">
             <div class="table-header">
-                <h5>Recent Shipments</h5>
+                <h5>Recent Tracking IDs</h5>
                 <div class="table-actions">
                     <a href="{{ route('admin.shipments') }}" class="btn btn-sm btn-outline-secondary">
                         <i class="bi bi-list me-1"></i> View All
-                    </a>
                 </div>
             </div>
             <div class="table-container">
@@ -184,7 +183,7 @@
                             <td colspan="8" class="text-center py-4">
                                 <div class="text-muted">
                                     <i class="bi bi-inbox" style="font-size: 2rem;"></i>
-                                    <p class="mt-2 mb-0">No shipments found</p>
+                                    <p class="mt-2 mb-0">No tracking IDs found</p>
                                 </div>
                             </td>
                         </tr>
@@ -194,7 +193,7 @@
             </div>
             <div class="p-3 border-top">
                 <a href="{{ route('admin.shipments') }}" class="btn btn-link text-decoration-none">
-                    View All Shipments <i class="bi bi-arrow-right ms-1"></i>
+                    View All Tracking IDs <i class="bi bi-arrow-right ms-1"></i>
                 </a>
             </div>
         </div>
