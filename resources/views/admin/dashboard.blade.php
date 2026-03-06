@@ -44,7 +44,7 @@
                 </div>
                 <div class="stat-content">
                     <h3>{{ $totalShipments }}</h3>
-                    <p>Total Shipments</p>
+                    <p>Total Tracking IDs</p>
                 </div>
             </div>
             <div class="stat-card">
