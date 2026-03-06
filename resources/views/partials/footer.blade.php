@@ -78,12 +78,12 @@
                     <ul class="footer-contact-list">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Brandenburgische Str 60, Bickenbach, Rheinland-Pfalz, Germany</span>
+                            <span> 720 Grand Blvd, Deer Park, NY 11729, USA</span>
                         </li>
-                        <li>
+                        {{-- <li>
                             <i class="fas fa-phone-alt"></i>
                             <a href="tel:+4962519866200">+49 (0) 6251 986 620</a>
-                        </li>
+                        </li> --}}
                         <li>
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:support@santashiplogistics.org">support@santashiplogistics.org</a>
