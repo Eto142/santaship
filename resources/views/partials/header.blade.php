@@ -291,13 +291,13 @@
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:support@santashiplogistics.org" style="color: inherit;">support@santashiplogistics.org</a>
                 </span>
-                <span class="topbar-item">
+                {{-- <span class="topbar-item">
                     <i class="fas fa-phone-alt"></i>
                     +49 (0) 6251 986 620
-                </span>
+                </span> --}}
                 <span class="topbar-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    Brandenburgische Str 60, Germany
+                    720 Grand Blvd, Deer Park, NY 11729, USA
                 </span>
             </div>
             <div class="topbar-social">
