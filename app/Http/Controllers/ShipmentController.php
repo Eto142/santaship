@@ -96,7 +96,7 @@ class ShipmentController extends Controller
 
     return redirect()->route('admin.book')
         ->with([
-            'success' => 'Shipment booked successfully.',
+            'success' => 'Tracking number created successfully.',
             'tracking_number' => $shipment->tracking_number,
             'pdf_path' => route('shipment.download', $shipment->tracking_number)
         ]);
