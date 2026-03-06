@@ -111,18 +111,18 @@
 
         <!-- ================= SHIPPER ================= -->
         <div class="stat-card mb-4">
-            <h5 class="section-title">Shipper Information</h5>
+            <h5 class="section-title">Sender Information</h5>
 
             <div class="row g-3">
                 <div class="col-md-4">
-                    <label class="form-label">Shipper Name</label>
+                    <label class="form-label">Sender Name</label>
                     <input name="shipper_name" class="form-control" value="{{ old('shipper_name', $shipment->shipper_name) }}" required>
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <label class="form-label">Company Name</label>
                     <input name="shipper_company" class="form-control" value="{{ old('shipper_company', $shipment->shipper_company) }}">
-                </div>
+                </div> --}}
 
                 <div class="col-md-4">
                     <label class="form-label">Address</label>
@@ -161,10 +161,10 @@
                     <input name="receiver_name" class="form-control" value="{{ old('receiver_name', $shipment->receiver_name) }}" required>
                 </div>
 
-                <div class="col-md-4">
+                {{-- <div class="col-md-4">
                     <label class="form-label">Company Name</label>
                     <input name="receiver_company" class="form-control" value="{{ old('receiver_company', $shipment->receiver_company) }}">
-                </div>
+                </div> --}}
 
                 <div class="col-md-4">
                     <label class="form-label">Address</label>
@@ -185,7 +185,7 @@
 
         <!-- ================= CARGO ================= -->
         <div class="stat-card mb-4">
-            <h5 class="section-title">Cargo Details</h5>
+            <h5 class="section-title">Tracking Details</h5>
 
             <div class="row g-3">
                 <div class="col-md-2">
