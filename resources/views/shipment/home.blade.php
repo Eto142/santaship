@@ -918,7 +918,7 @@ window.smartsupp||(function(d) {
                 <div class="footer-col-title">Contact Us</div>
                 <ul class="footer-links">
                     <li><a href="mailto:support@santashiplogistics.org"><i class="fas fa-envelope"></i> support@santashiplogistics.com</a></li>
-                    <li><a href="tel:+49062519866200"><i class="fas fa-phone-alt"></i> +49 (0) 6251 986 620</a></li>
+                    {{-- <li><a href="tel:+49062519866200"><i class="fas fa-phone-alt"></i> +49 (0) 6251 986 620</a></li> --}}
                     <li><a href="#"><i class="fas fa-map-marker-alt"></i> 720 Grand Blvd, Deer Park, NY 11729, USA</a></li>
                 </ul>
             </div>
