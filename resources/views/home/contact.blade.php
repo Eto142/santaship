@@ -1,7 +1,7 @@
 @include('home.header')
 
 {{-- ======================================================
-     SANTASHIP LOGISTICS — CONTACT PAGE
+     SANTASHIP LOGISTICS  CONTACT PAGE
 ====================================================== --}}
 
 {{-- PAGE HERO --}}
@@ -25,7 +25,7 @@
             <div class="contact-info-col" data-aos="fade-right">
                 <div class="section-label">Get In Touch</div>
                 <h2 class="section-title">We'd Love to <span>Hear From You</span></h2>
-                <p class="contact-intro">Whether you have a question about our services, need a shipping quote, or want to track a shipment — our team is ready to help, 24 hours a day, 7 days a week.</p>
+                <p class="contact-intro">Whether you have a question about our services, need a shipping quote, or want to track a shipment  our team is ready to help, 24 hours a day, 7 days a week.</p>
 
                 <div class="contact-details">
                     <div class="contact-detail-item">
@@ -133,7 +133,7 @@
                                 <i class="fas fa-barcode input-icon"></i>
                                 <input type="text" id="shipment" name="shipment"
                                     value="{{ old('shipment') }}"
-                                    placeholder="Optional — if enquiring about a shipment"
+                                    placeholder="Optional  if enquiring about a shipment"
                                     class="{{ $errors->has('shipment') ? 'is-error' : '' }}">
                             </div>
                             @error('shipment')
