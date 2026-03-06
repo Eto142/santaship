@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label class="form-label">Product</label>
+                    <label class="form-label">Package Name</label>
                     <input type="text" name="product" class="form-control">
                 </div>
             </div>

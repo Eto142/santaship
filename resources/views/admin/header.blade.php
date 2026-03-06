@@ -610,7 +610,7 @@
              <div class="nav-item">
                 <a href="{{ route('admin.book') }}" class="nav-link">
                     <i class="bi bi-box-seam nav-icon"></i>
-                    <span class="nav-text">Create Tracking ID</span>
+                    <span class="nav-text">Create Package</span>
                     {{-- <span class="badge bg-danger ms-auto">5</span> --}}
                 </a>
             </div>
@@ -639,6 +639,12 @@
                 <a href="{{ route('admin.change.password') }}" class="nav-link">
                     <i class="bi bi-gear nav-icon"></i>
                     <span class="nav-text">Change Password</span>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{{ url('/') }}" class="nav-link" target="_blank">
+                    <i class="bi bi-globe nav-icon"></i>
+                    <span class="nav-text">Visit Website</span>
                 </a>
             </div>
         </div>
