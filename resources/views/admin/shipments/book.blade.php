@@ -34,7 +34,7 @@
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label">Tracking Number</label>
-                    <input type="text" name="tracking_number" class="form-control" value="BGL-{{ strtoupper(Str::random(8)) }}" required>
+                    <input type="text" name="tracking_number" class="form-control" value="{{ strtoupper(Str::random(8)) }}" required>
                 </div>
 
                 <div class="col-md-4">
