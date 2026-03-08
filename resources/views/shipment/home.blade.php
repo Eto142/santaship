@@ -26,12 +26,12 @@
            SANTASHIP LOGISTICS — TRACKING PAGE DESIGN SYSTEM
         ====================================================== */
         :root {
-            --primary:        #0D1B2A;
-            --primary-mid:    #1A3A5C;
-            --primary-light:  #2A5298;
-            --accent:         #E8920A;
-            --accent-hover:   #C97A08;
-            --accent-light:   #FFA726;
+            --primary:        #0B3D91;
+            --primary-mid:    #1557C0;
+            --primary-light:  #2478E8;
+            --accent:         #00AEEF;
+            --accent-hover:   #0090CC;
+            --accent-light:   #33C5F7;
             --white:          #FFFFFF;
             --off-white:      #F8FAFC;
             --light-gray:     #EDF2F7;

@@ -2,7 +2,7 @@
 
 {{-- ======================================================
      SANTASHIP LOGISTICS — HOMEPAGE
-     Color System: Deep Navy (#0D1B2A) + Amber (#E8920A)
+     Color System: Royal Blue (#0B3D91) + Electric Sky Blue (#00AEEF)
 ====================================================== --}}
 
 {{-- ===================================================
@@ -532,12 +532,12 @@ section, .hero, .quick-actions, .stats-band,
 .hero-bg {
     position: absolute; inset: 0; z-index: 0;
     background:
-        linear-gradient(135deg, rgba(13,27,42,.95) 0%, rgba(26,58,92,.90) 50%, rgba(13,27,42,.93) 100%),
+        linear-gradient(135deg, rgba(11,61,145,.95) 0%, rgba(21,87,192,.88) 50%, rgba(5,30,72,.96) 100%),
         url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80') center/cover no-repeat;
 }
 .hero-overlay {
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(232,146,10,.15) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 70% 50%, rgba(0,174,239,.18) 0%, transparent 60%);
 }
 .hero-inner {
     position: relative; z-index: 1;
@@ -549,8 +549,8 @@ section, .hero, .quick-actions, .stats-band,
 /* Badge */
 .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(232,146,10,.15); color: var(--accent);
-    border: 1px solid rgba(232,146,10,.35); border-radius: 50px;
+    background: rgba(255,255,255,.12); color: var(--white);
+    border: 1px solid rgba(255,255,255,.35); border-radius: 50px;
     padding: 7px 18px; font-size: 13px; font-weight: 600;
     margin-bottom: 22px; letter-spacing: .5px;
 }
@@ -587,7 +587,7 @@ section, .hero, .quick-actions, .stats-band,
 }
 .track-card-header i {
     font-size: 28px; color: var(--accent);
-    background: rgba(232,146,10,.12); padding: 14px;
+    background: rgba(0,174,239,.12); padding: 14px;
     border-radius: var(--radius-md);
 }
 .track-card-header strong { display: block; font-size: 18px; font-weight: 700; color: var(--primary); }
@@ -644,7 +644,7 @@ section, .hero, .quick-actions, .stats-band,
 .qa-card-featured .qa-icon { background: rgba(255,255,255,.12); color: var(--accent); }
 .qa-icon {
     width: 56px; height: 56px; border-radius: var(--radius-md);
-    background: rgba(232,146,10,.1); color: var(--accent);
+    background: rgba(0,174,239,.10); color: var(--accent);
     display: flex; align-items: center; justify-content: center;
     font-size: 22px; margin-bottom: 18px;
 }
@@ -666,7 +666,7 @@ section, .hero, .quick-actions, .stats-band,
 }
 .stats-band::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(232,146,10,.1) 0%, transparent 70%);
+    background: radial-gradient(ellipse at 50% 50%, rgba(0,174,239,.10) 0%, transparent 70%);
 }
 .stats-grid {
     display: grid; grid-template-columns: repeat(4, 1fr);
@@ -679,7 +679,7 @@ section, .hero, .quick-actions, .stats-band,
 .stat-item:last-child { border-right: none; }
 .stat-icon {
     width: 52px; height: 52px; border-radius: 50%;
-    background: rgba(232,146,10,.15); color: var(--accent);
+    background: rgba(0,174,239,.15); color: var(--accent);
     display: flex; align-items: center; justify-content: center;
     font-size: 20px; margin: 0 auto 16px;
 }
@@ -761,7 +761,7 @@ section, .hero, .quick-actions, .stats-band,
 .service-card:hover .service-card-img img { transform: scale(1.06); }
 .service-card-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(13,27,42,.5) 100%);
+    background: linear-gradient(to bottom, transparent 40%, rgba(5,30,72,.60) 100%);
 }
 .service-card-body { padding: 28px; position: relative; }
 .service-icon {
@@ -769,7 +769,7 @@ section, .hero, .quick-actions, .stats-band,
     width: 48px; height: 48px; border-radius: 50%;
     background: var(--accent); color: var(--white);
     display: flex; align-items: center; justify-content: center;
-    font-size: 18px; box-shadow: 0 4px 16px rgba(232,146,10,.4);
+    font-size: 18px; box-shadow: 0 4px 16px rgba(0,174,239,.35);
 }
 .service-title {
     font-family: 'Rajdhani', sans-serif;
@@ -799,7 +799,7 @@ section, .hero, .quick-actions, .stats-band,
     width: 52px; height: 52px; border-radius: var(--radius-md); flex-shrink: 0;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
     color: var(--white); display: flex; align-items: center; justify-content: center;
-    font-size: 20px; box-shadow: 0 4px 14px rgba(232,146,10,.35);
+    font-size: 20px; box-shadow: 0 4px 14px rgba(0,174,239,.30);
 }
 .why-feature-body h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
 .why-feature-body p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
@@ -832,7 +832,7 @@ section, .hero, .quick-actions, .stats-band,
 }
 .testimonials-section::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(232,146,10,.12) 0%, transparent 60%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.07) 0%, transparent 60%);
     pointer-events: none;
 }
 .testimonials-section .section-label::before { background: var(--accent); }

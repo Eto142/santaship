@@ -26,12 +26,12 @@
         ====================================================== */
         :root {
             /* Brand Colors */
-            --primary:        #0D1B2A;   /* Deep Navy  */
-            --primary-mid:    #1A3A5C;   /* Mid Navy   */
-            --primary-light:  #2A5298;   /* Royal Blue */
-            --accent:         #E8920A;   /* Amber      */
-            --accent-hover:   #C97A08;   /* Dark Amber */
-            --accent-light:   #FFA726;   /* Light Amber*/
+            --primary:        #0B3D91;   /* Royal Blue       */
+            --primary-mid:    #1557C0;   /* Bright Royal Blue*/
+            --primary-light:  #2478E8;   /* Vivid Blue       */
+            --accent:         #00AEEF;   /* Electric Sky Blue*/
+            --accent-hover:   #0090CC;   /* Deep Sky Blue    */
+            --accent-light:   #33C5F7;   /* Light Sky Blue   */
 
             /* Neutrals */
             --white:          #FFFFFF;
@@ -104,11 +104,11 @@
         .btn-primary {
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
             color: var(--white);
-            box-shadow: 0 4px 18px rgba(232,146,10,.35);
+            box-shadow: 0 4px 18px rgba(0,174,239,.35);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(232,146,10,.45);
+            box-shadow: 0 8px 24px rgba(0,174,239,.45);
             color: var(--white);
         }
         .btn-outline-primary {
@@ -125,7 +125,7 @@
             background: var(--white); color: var(--primary);
             box-shadow: var(--shadow-md);
         }
-        .btn-white:hover { background: var(--accent); color: var(--white); box-shadow: 0 8px 24px rgba(232,146,10,.4); }
+        .btn-white:hover { background: var(--accent); color: var(--white); box-shadow: 0 8px 24px rgba(0,174,239,.4); }
 
         /* ======================================================
            TOP BAR
@@ -209,11 +209,11 @@
             color: var(--white);
             padding: 10px 22px; border-radius: 50px;
             font-size: 13.5px; font-weight: 600;
-            box-shadow: 0 4px 16px rgba(232,146,10,.35);
+            box-shadow: 0 4px 16px rgba(0,174,239,.35);
         }
         .btn-header-track:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 22px rgba(232,146,10,.48);
+            box-shadow: 0 6px 22px rgba(0,174,239,.48);
             color: var(--white);
         }
 

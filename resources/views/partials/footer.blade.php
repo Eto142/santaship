@@ -190,7 +190,7 @@
 
     /* Footer Bottom */
     .footer-bottom {
-        background: #070F18;
+        background: #051E48;
         padding: 18px 0;
     }
     .footer-bottom-inner {

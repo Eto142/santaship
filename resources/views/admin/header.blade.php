@@ -9,10 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --primary: #003366;
-            --primary-dark: #001f3f;
+            --primary: #0B3D91;
+            --primary-dark: #062060;
             --secondary: #6c757d;
-            --success: #004080;
+            --success: #16A34A;
             --warning: #ffc107;
             --danger: #dc3545;
             --light: #f8f9fa;
