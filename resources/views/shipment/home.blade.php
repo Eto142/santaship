@@ -518,25 +518,98 @@
         .syncing { animation: spinSync .6s linear infinite; }
 
         /* ======================================================
+           RESPONSIVE HELPER CLASSES
+        ====================================================== */
+        .tracking-strip {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 50px;
+            padding: 10px 24px;
+            margin: 14px 0 28px;
+        }
+        .package-banner {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%);
+            border-radius: var(--radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .package-banner-right {
+            margin-left: auto;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .detail-grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        /* ======================================================
            RESPONSIVE
         ====================================================== */
+        @media (max-width: 1024px) {
+            .content-grid { grid-template-columns: 1fr 300px; }
+        }
         @media (max-width: 960px) {
             .content-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 767px) {
-            .tracking-hero { padding: 50px 0 70px; }
-            .tracking-hero h1 { font-size: 1.8rem; }
+            .tracking-hero { padding: 40px 0 65px; margin-bottom: 40px; }
+            .tracking-hero h1 { font-size: 1.75rem; }
             .badge-group { gap: 10px; }
             .badge-item { min-width: 140px; }
             .info-row { flex-direction: column; gap: 2px; }
             .info-label { flex: none; }
             .timeline { padding-left: 28px; }
+            .timeline::before { left: 12px; }
             .timeline-dot { width: 30px; height: 30px; left: -36px; font-size: .8rem; }
             .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .track-logo img { height: 46px; }
+            .info-body { padding: 16px; }
+            .info-header { padding: 14px 16px; font-size: 1rem; }
+            .detail-grid-2col { grid-template-columns: 1fr !important; }
+            .package-banner { flex-direction: column; align-items: flex-start; gap: 12px; padding: 14px 16px; }
+            .package-banner-right { margin-left: 0; text-align: left; }
+            .tracking-strip { border-radius: 14px; padding: 12px 16px; width: 100%; }
+            #shipment-map { height: 280px !important; }
+            table th, table td { padding: 10px 10px; font-size: .82rem; }
+            .action-btn { padding: 11px 18px; font-size: .875rem; }
+            .track-footer { padding: 36px 0 20px; margin-top: 40px; }
+        }
+        @media (max-width: 576px) {
+            .tracking-hero { padding: 32px 0 55px; }
+            .tracking-hero h1 { font-size: 1.5rem; }
+            .badge-item { min-width: calc(50% - 8px); }
+            .hero-badge { font-size: 11px; padding: 7px 18px; }
+            .info-card { margin-bottom: 18px; }
+            .timeline-content { padding: 12px 14px; }
+            .timeline-date { font-size: .75rem; }
         }
         @media (max-width: 480px) {
-            .container { padding: 0 16px; }
-            .badge-item { min-width: 120px; padding: 10px 14px; }
+            .container { padding: 0 12px; }
+            .badge-item { min-width: 100%; }
+            .tracking-strip { border-radius: 12px; }
+            .info-body { padding: 12px; }
+            .info-header { padding: 12px 14px; }
+            .package-banner { padding: 12px 14px; }
+            .timeline { padding-left: 24px; }
+            .timeline-dot { width: 26px; height: 26px; left: -32px; font-size: .75rem; }
+            table th, table td { padding: 8px 8px; font-size: .78rem; }
+            .footer-links a { font-size: .82rem; }
+        }
+        @media (max-width: 360px) {
+            .tracking-hero h1 { font-size: 1.3rem; }
+            .badge-item { min-width: 100%; padding: 10px 12px; }
+            .track-logo img { height: 38px; }
         }
     </style>
 </head>
@@ -587,7 +660,7 @@ window.smartsupp||(function(d) {
         @endif
 
         {{-- Tracking number strip --}}
-        <div style="display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:50px; padding:10px 24px; margin:14px 0 28px;">
+        <div class="tracking-strip">
             <i class="fas fa-barcode" style="color:var(--accent-light); font-size:1.15rem;"></i>
             <span style="font-size:.75rem; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,.6); font-weight:600;">Tracking ID</span>
             <strong style="font-family:'Rajdhani',sans-serif; font-size:1.25rem; letter-spacing:1px; color:var(--white);">{{ $shipment->tracking_number }}</strong>
@@ -636,7 +709,7 @@ window.smartsupp||(function(d) {
 
                     {{-- Package name banner --}}
                     @if(!empty($shipment->product))
-                    <div style="display:flex; align-items:center; gap:16px; background:linear-gradient(135deg,var(--primary) 0%,var(--primary-mid) 100%); border-radius:var(--radius-md); padding:16px 20px; margin-bottom:24px;">
+                    <div class="package-banner">
                         <div style="width:44px;height:44px;border-radius:50%;background:rgba(232,146,10,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                             <i class="fas fa-cube" style="color:var(--accent);font-size:1.1rem;"></i>
                         </div>
@@ -647,14 +720,14 @@ window.smartsupp||(function(d) {
                             <div style="font-size:.8rem;color:rgba(255,255,255,.6);margin-top:3px;">{{ $shipment->description }}</div>
                             @endif
                         </div>
-                        <div style="margin-left:auto;text-align:right;flex-shrink:0;">
+                        <div class="package-banner-right">
                             <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.5);margin-bottom:3px;">Tracking No.</div>
                             <div style="font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:700;color:var(--accent-light);">{{ $shipment->tracking_number }}</div>
                         </div>
                     </div>
                     @endif
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+                    <div class="detail-grid-2col">
                         <div>
                             <div class="sub-heading"><i class="fas fa-user-tie"></i> Sender Information</div>
                             <div class="info-row"><span class="info-label">Name</span><span class="info-value">{{ $shipment->shipper_name }}</span></div>
@@ -669,7 +742,7 @@ window.smartsupp||(function(d) {
                         </div>
                     </div>
 
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+                    <div class="detail-grid-2col">
                         <div>
                             <div class="sub-heading"><i class="fas fa-info-circle"></i> Shipment Details</div>
                             <div class="info-row"><span class="info-label">Carrier</span><span class="info-value">{{ $shipment->carrier }}</span></div>
