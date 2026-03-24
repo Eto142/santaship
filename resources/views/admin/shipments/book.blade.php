@@ -39,22 +39,22 @@
 
                 <div class="col-md-4">
                     <label class="form-label">Reference No</label>
-                    <input type="text" name="reference_no" class="form-control">
+                    <input type="text" name="reference_no" class="form-control" placeholder="e.g. REF-2026-001">
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">Carrier</label>
-                    <input type="text" name="carrier" class="form-control">
+                    <input type="text" name="carrier" class="form-control" placeholder="e.g. FedEx, DHL, UPS">
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">Origin</label>
-                    <input type="text" name="origin" class="form-control" required>
+                    <input type="text" name="origin" class="form-control" placeholder="e.g. New York, USA" required>
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">Destination</label>
-                    <input type="text" name="destination" class="form-control" required>
+                    <input type="text" name="destination" class="form-control" placeholder="e.g. London, UK" required>
                 </div>
 
                 <div class="col-md-4">
@@ -64,7 +64,7 @@
 
                 <div class="col-md-4">
                     <label class="form-label">Package Name</label>
-                    <input type="text" name="product" class="form-control">
+                    <input type="text" name="product" class="form-control" placeholder="e.g. Electronics, Documents">
                 </div>
             </div>
         </div>
@@ -75,19 +75,19 @@
             <div class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label">Departure Time</label>
-                    <input type="text" name="departure_time" class="form-control">
+                    <input type="text" name="departure_time" class="form-control" placeholder="e.g. 2026-03-25 14:00">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Expected Delivery Date</label>
-                    <input type="text" name="expected_delivery_date" class="form-control">
+                    <input type="text" name="expected_delivery_date" class="form-control" placeholder="e.g. 2026-03-30">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Pickup Date</label>
-                    <input type="text" name="pickup_date" class="form-control">
+                    <input type="text" name="pickup_date" class="form-control" placeholder="e.g. 2026-03-24">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Pickup Time</label>
-                    <input type="text" name="pickup_time" class="form-control">
+                    <input type="text" name="pickup_time" class="form-control" placeholder="e.g. 10:00 AM">
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label">Sender Name</label>
-                    <input name="shipper_name" class="form-control" required>
+                    <input name="shipper_name" class="form-control" placeholder="e.g. John Doe" required>
                 </div>
 
                 {{-- <div class="col-md-4">
@@ -109,27 +109,27 @@
 
                 <div class="col-md-4">
                     <label class="form-label">Address</label>
-                    <input name="shipper_address" class="form-control" required>
+                    <input name="shipper_address" class="form-control" placeholder="e.g. 123 Main Street" required>
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">City</label>
-                    <input name="shipper_city" class="form-control">
+                    <input name="shipper_city" class="form-control" placeholder="e.g. New York">
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">Country</label>
-                    <input name="shipper_country" class="form-control">
+                    <input name="shipper_country" class="form-control" placeholder="e.g. United States">
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">Phone</label>
-                    <input name="shipper_phone" class="form-control">
+                    <input name="shipper_phone" class="form-control" placeholder="e.g. +1 234 567 8900">
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">Postal Code</label>
-                    <input name="shipper_postal_code" class="form-control">
+                    <input name="shipper_postal_code" class="form-control" placeholder="e.g. 10001">
                 </div>
             </div>
         </div>
@@ -141,7 +141,7 @@
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label">Receiver Name</label>
-                    <input name="receiver_name" class="form-control" required>
+                    <input name="receiver_name" class="form-control" placeholder="e.g. Jane Smith" required>
                 </div>
 
                 {{-- <div class="col-md-4">
@@ -151,17 +151,17 @@
 
                 <div class="col-md-4">
                     <label class="form-label">Address</label>
-                    <input name="receiver_address" class="form-control" required>
+                    <input name="receiver_address" class="form-control" placeholder="e.g. 456 Elm Street" required>
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">City</label>
-                    <input name="receiver_city" class="form-control">
+                    <input name="receiver_city" class="form-control" placeholder="e.g. London">
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">Country</label>
-                    <input name="receiver_country" class="form-control">
+                    <input name="receiver_country" class="form-control" placeholder="e.g. United Kingdom">
                 </div>
             </div>
         </div>
@@ -173,22 +173,22 @@
             <div class="row g-3">
                 <div class="col-md-2">
                     <label class="form-label">Quantity</label>
-                    <input name="quantity" type="number" class="form-control">
+                    <input name="quantity" type="number" class="form-control" placeholder="e.g. 1">
                 </div>
 
                 <div class="col-md-2">
                     <label class="form-label">Weight</label>
-                    <input name="weight" class="form-control">
+                    <input name="weight" class="form-control" placeholder="e.g. 2.5 kg">
                 </div>
 
                 <div class="col-md-4">
                     <label class="form-label">Description</label>
-                    <input name="description" class="form-control">
+                    <input name="description" class="form-control" placeholder="e.g. Fragile electronics">
                 </div>
 
                 <div class="col-12">
                     <label class="form-label">Comments</label>
-                    <textarea name="comments" class="form-control" rows="2"></textarea>
+                    <textarea name="comments" class="form-control" rows="2" placeholder="e.g. Handle with care, keep dry"></textarea>
                 </div>
             </div>
         </div>
@@ -205,17 +205,17 @@
 
                 <div class="col-md-3">
                     <label class="form-label">Value</label>
-                    <input name="value" type="text" class="form-control">
+                    <input name="value" type="text" class="form-control" placeholder="e.g. 500.00">
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">Payment Mode</label>
-                    <input name="payment_mode" type="text" class="form-control">
+                    <input name="payment_mode" type="text" class="form-control" placeholder="e.g. Prepaid, Cash, Credit">
                 </div>
 
                 <div class="col-md-3">
                     <label class="form-label">Total Freight</label>
-                    <input name="total_freight" type="text" class="form-control">
+                    <input name="total_freight" type="text" class="form-control" placeholder="e.g. 150.00">
                 </div>
             </div>
         </div>
