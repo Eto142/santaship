@@ -63,16 +63,6 @@
                 </div>
 
                 <div class="col-md-4">
-                    <label class="form-label">Shipment Type</label>
-                    <input type="text" name="shipment_type" class="form-control">
-                </div>
-
-                <div class="col-md-4">
-                    <label class="form-label">Package Type</label>
-                    <input type="text" name="package_type" class="form-control">
-                </div>
-
-                <div class="col-md-4">
                     <label class="form-label">Package Name</label>
                     <input type="text" name="product" class="form-control">
                 </div>
@@ -184,16 +174,6 @@
                 <div class="col-md-2">
                     <label class="form-label">Quantity</label>
                     <input name="quantity" type="number" class="form-control">
-                </div>
-
-                <div class="col-md-2">
-                    <label class="form-label">Piece Type</label>
-                    <input name="piece_type" class="form-control">
-                </div>
-
-                <div class="col-md-2">
-                    <label class="form-label">Height</label>
-                    <input name="height" class="form-control">
                 </div>
 
                 <div class="col-md-2">
