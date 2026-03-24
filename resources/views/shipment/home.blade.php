@@ -748,7 +748,6 @@ window.smartsupp||(function(d) {
                             <div class="info-row"><span class="info-label">Carrier</span><span class="info-value">{{ $shipment->carrier }}</span></div>
                             <div class="info-row"><span class="info-label">Reference No</span><span class="info-value">{{ $shipment->reference_no }}</span></div>
                             <div class="info-row"><span class="info-label">Shipment Mode</span><span class="info-value">{{ $shipment->shipment_mode }}</span></div>
-                            <div class="info-row"><span class="info-label">Type</span><span class="info-value">{{ $shipment->shipment_type }}</span></div>
                         </div>
                         <div>
                             <div class="sub-heading"><i class="fas fa-clock"></i> Timing</div>
@@ -765,8 +764,6 @@ window.smartsupp||(function(d) {
                             <thead>
                                 <tr>
                                     <th>Qty</th>
-                                    <th>Type</th>
-                                    <th>Height (cm)</th>
                                     <th>Weight (kg)</th>
                                     <th>Description</th>
                                 </tr>
@@ -774,8 +771,6 @@ window.smartsupp||(function(d) {
                             <tbody>
                                 <tr>
                                     <td>{{ $shipment->quantity }}</td>
-                                    <td>{{ $shipment->piece_type }}</td>
-                                    <td>{{ $shipment->height }}</td>
                                     <td>{{ $shipment->weight }}</td>
                                     <td>{{ $shipment->description }}</td>
                                 </tr>

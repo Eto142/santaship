@@ -57,8 +57,6 @@ class ShipmentController extends Controller
             'receiver_country' => 'nullable|string',
 
             'quantity' => 'nullable|integer',
-            'piece_type' => 'nullable|string',
-            'height' => 'nullable|string',
             'weight' => 'nullable|string',
             'description' => 'nullable|string',
             'comments' => 'nullable|string',
@@ -296,8 +294,6 @@ public function update(Request $request, $id)
             'shipment_date' => 'nullable|date',
             'carrier' => 'nullable|string',
             'shipment_mode' => 'nullable|string',
-            'shipment_type' => 'nullable|string',
-            'package_type' => 'nullable|string',
             'product' => 'nullable|string',
             'payment_mode' => 'nullable|string',
             'total_freight' => 'nullable|string',
@@ -323,8 +319,6 @@ public function update(Request $request, $id)
             'receiver_country' => 'nullable|string',
 
             'quantity' => 'nullable|integer',
-            'piece_type' => 'nullable|string',
-            'height' => 'nullable|string',
             'weight' => 'nullable|string',
             'description' => 'nullable|string',
             'comments' => 'nullable|string',
