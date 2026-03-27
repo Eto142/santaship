@@ -268,8 +268,6 @@
         @media (max-width: 960px) {
             .main-nav, .header-cta { display: none; }
             .hamburger { display: flex; }
-            /* Hide translate from header bar — it moves to mobile overlay via JS */
-            .header-translate { display: none; }
         }
         @media (max-width: 600px) {
             section { padding: 60px 0; }
@@ -343,6 +341,16 @@ window.smartsupp||(function(d) {
 <body>
 
 <!-- ===========================
+     TRANSLATE BAR (always visible)
+=========================== -->
+<div class="translate-bar">
+    <div class="container">
+        <span class="translate-bar-label"><i class="fas fa-globe" style="margin-right:5px;"></i>Translate:</span>
+        <div id="google_translate_element"></div>
+    </div>
+</div>
+
+<!-- ===========================
      TOP INFO BAR
 =========================== -->
 <div class="site-topbar">
@@ -403,11 +411,6 @@ window.smartsupp||(function(d) {
                 </a>
             </div>
 
-            <!-- Google Translate -->
-            <div class="header-translate">
-                <div id="google_translate_element" aria-label="Translate site"></div>
-            </div>
-
             <!-- Mobile Hamburger -->
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
                 <span></span><span></span><span></span>
@@ -436,8 +439,6 @@ window.smartsupp||(function(d) {
         <a href="{{ url('/contact') }}"><i class="fas fa-envelope"></i> Contact Us</a>
     </nav>
     <div class="mobile-nav-footer">
-        <!-- Translate slot (widget moved here by JS on mobile) -->
-        <div id="translate-mobile-slot" style="margin-bottom:14px; display:flex; justify-content:center;"></div>
         <a href="{{ url('/track-now') }}" class="btn btn-primary" style="width: 100%; justify-content: center;">
             <i class="fas fa-shipping-fast"></i> Track My Shipment
         </a>
@@ -476,21 +477,5 @@ function googleTranslateElementInit() {
         mClose.addEventListener('click', closeNav);
         mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
-
-        // Move the single Google Translate widget between header and mobile overlay
-        const translateWidget  = document.getElementById('google_translate_element');
-        const headerSlot       = document.querySelector('.header-translate');
-        const mobileSlot       = document.getElementById('translate-mobile-slot');
-        function placeTranslate() {
-            if (window.innerWidth <= 960) {
-                if (translateWidget && mobileSlot && !mobileSlot.contains(translateWidget))
-                    mobileSlot.appendChild(translateWidget);
-            } else {
-                if (translateWidget && headerSlot && !headerSlot.contains(translateWidget))
-                    headerSlot.appendChild(translateWidget);
-            }
-        }
-        placeTranslate();
-        window.addEventListener('resize', placeTranslate);
     })();
 </script>
