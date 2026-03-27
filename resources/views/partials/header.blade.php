@@ -268,6 +268,8 @@
         @media (max-width: 960px) {
             .main-nav, .header-cta { display: none; }
             .hamburger { display: flex; }
+            /* Hide translate from header bar — it moves to mobile overlay via JS */
+            .header-translate { display: none; }
         }
         @media (max-width: 600px) {
             section { padding: 60px 0; }
@@ -307,6 +309,22 @@
             color: var(--accent) !important;
         }
         #google_translate_element .goog-te-gadget-simple img { display: none !important; }
+
+        /* Widget inside mobile overlay slot \u2014 dark background style */
+        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple {
+            background: rgba(255,255,255,.12) !important;
+            border: 1px solid rgba(255,255,255,.3) !important;
+            border-radius: 20px !important;
+            padding: 8px 20px !important;
+            font-size: 13px !important;
+        }
+        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple span,
+        #translate-mobile-slot #google_translate_element .goog-te-menu-value span {
+            color: rgba(255,255,255,.9) !important;
+        }
+        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child {
+            color: var(--accent) !important;
+        }
     </style>
 </head>
 <!-- Smartsupp Live Chat script -->
@@ -418,6 +436,8 @@ window.smartsupp||(function(d) {
         <a href="{{ url('/contact') }}"><i class="fas fa-envelope"></i> Contact Us</a>
     </nav>
     <div class="mobile-nav-footer">
+        <!-- Translate slot (widget moved here by JS on mobile) -->
+        <div id="translate-mobile-slot" style="margin-bottom:14px; display:flex; justify-content:center;"></div>
         <a href="{{ url('/track-now') }}" class="btn btn-primary" style="width: 100%; justify-content: center;">
             <i class="fas fa-shipping-fast"></i> Track My Shipment
         </a>
@@ -456,5 +476,21 @@ function googleTranslateElementInit() {
         mClose.addEventListener('click', closeNav);
         mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+
+        // Move the single Google Translate widget between header and mobile overlay
+        const translateWidget  = document.getElementById('google_translate_element');
+        const headerSlot       = document.querySelector('.header-translate');
+        const mobileSlot       = document.getElementById('translate-mobile-slot');
+        function placeTranslate() {
+            if (window.innerWidth <= 960) {
+                if (translateWidget && mobileSlot && !mobileSlot.contains(translateWidget))
+                    mobileSlot.appendChild(translateWidget);
+            } else {
+                if (translateWidget && headerSlot && !headerSlot.contains(translateWidget))
+                    headerSlot.appendChild(translateWidget);
+            }
+        }
+        placeTranslate();
+        window.addEventListener('resize', placeTranslate);
     })();
 </script>
