@@ -272,56 +272,128 @@
         @media (max-width: 600px) {
             section { padding: 60px 0; }
             .site-topbar { display: none; }
+            .translate-bar .container { justify-content: center; }
+            .translate-bar-label { display: none; }
         }
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
+            .mobile-nav-links a { font-size: 15px; padding: 13px 16px; }
         }
 
         /* ======================================================
-           GOOGLE TRANSLATE WIDGET
+           LANGUAGE SELECTOR DROPDOWN
         ====================================================== */
-        /* Suppress the banner Google Translate injects */
+        /* Suppress Google Translate banner */
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         body { top: 0 !important; }
+        #google_translate_element { display: none !important; }
 
-        /* Widget wrapper — always visible in header bar */
-        .header-translate {
+        .translate-bar {
+            background: #0a2f72;
+            padding: 5px 0;
+            width: 100%;
+            position: relative;
+            z-index: 1200;
+        }
+        .translate-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        /* The custom dropdown wrapper */
+        .select-language {
+            position: relative;
+        }
+        .select-language__link {
             display: inline-flex;
             align-items: center;
-            flex-shrink: 0;
-        }
-        #google_translate_element .goog-te-gadget-simple {
-            background: var(--light-gray) !important;
-            border: 1px solid var(--border) !important;
-            border-radius: 20px !important;
-            padding: 5px 12px !important;
-            font-size: 12px !important;
+            gap: 7px;
             cursor: pointer;
+            color: rgba(255,255,255,.85);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 4px 6px;
+            border-radius: 6px;
+            user-select: none;
+            transition: background .2s;
+        }
+        .select-language__link:hover { background: rgba(255,255,255,.1); }
+        .select-language__link .lang-arrow {
+            font-size: 10px;
+            transition: transform .25s ease;
+            color: rgba(255,255,255,.5);
+        }
+        .select-language.open .select-language__link .lang-arrow {
+            transform: rotate(180deg);
+        }
+        /* The dropdown panel */
+        .select-language__dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.22);
+            min-width: 200px;
+            z-index: 9999;
+            overflow: visible; /* don't clip the scrollable ul */
+        }
+        .select-language.open .select-language__dropdown { display: block; }
+        .select-language__dropdown ul {
+            list-style: none;
+            margin: 0;
+            padding: 6px 0;
+            max-height: 55vh;
+            overflow-y: scroll;           /* always-on scroll bar */
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain; /* stop page scrolling while inside list */
+            border-radius: 10px;
+        }
+        .select-language__dropdown li {
+            padding: 11px 18px;
+            font-size: 13.5px;
+            color: #1E293B;
+            cursor: pointer;
+            transition: background .15s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             white-space: nowrap;
         }
-        #google_translate_element .goog-te-gadget-simple span,
-        #google_translate_element .goog-te-menu-value span {
-            color: var(--primary) !important;
+        .select-language__dropdown li:hover { background: #EDF2F7; color: #0B3D91; }
+        .select-language__dropdown li.active {
+            color: #0B3D91;
+            font-weight: 600;
+            background: #EDF2F7;
         }
-        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child {
-            color: var(--accent) !important;
-        }
-        #google_translate_element .goog-te-gadget-simple img { display: none !important; }
+        .select-language__dropdown li .lang-tick { color: #00AEEF; font-size: 11px; min-width: 14px; }
 
-        /* Widget inside mobile overlay slot \u2014 dark background style */
-        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple {
-            background: rgba(255,255,255,.12) !important;
-            border: 1px solid rgba(255,255,255,.3) !important;
-            border-radius: 20px !important;
-            padding: 8px 20px !important;
-            font-size: 13px !important;
-        }
-        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple span,
-        #translate-mobile-slot #google_translate_element .goog-te-menu-value span {
-            color: rgba(255,255,255,.9) !important;
-        }
-        #translate-mobile-slot #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child {
-            color: var(--accent) !important;
+        /* ---- Phone-specific: full-width panel fixed below the bar ---- */
+        @media (max-width: 600px) {
+            .select-language {
+                position: static; /* escape the flex row so dropdown can be full-width */
+            }
+            .select-language__dropdown {
+                position: fixed;   /* fixed so no ancestor clips it */
+                top: auto;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                border-radius: 0 0 12px 12px;
+                box-shadow: 0 12px 40px rgba(0,0,0,.28);
+                min-width: unset;
+            }
+            .select-language__dropdown ul {
+                max-height: 55vh;
+                border-radius: 0 0 12px 12px;
+            }
+            .select-language__dropdown li {
+                font-size: 15px;
+                padding: 13px 20px;
+            }
         }
     </style>
 </head>
@@ -345,7 +417,37 @@ window.smartsupp||(function(d) {
 =========================== -->
 <div class="translate-bar">
     <div class="container">
-        <span class="translate-bar-label"><i class="fas fa-globe" style="margin-right:5px;"></i>Translate:</span>
+        <div class="select-language js-dropdown" id="langSwitcher">
+            <a class="select-language__link" id="lang-toggle" role="button" aria-haspopup="listbox" aria-expanded="false">
+                <i class="fas fa-globe"></i>
+                <span id="lang-current">English</span>
+                <i class="fas fa-chevron-down lang-arrow"></i>
+            </a>
+            <div class="select-language__dropdown" id="lang-dropdown">
+                <ul role="listbox">
+                    <li data-lang="en|en"><i class="fas fa-check lang-tick"></i> English</li>
+                    <li data-lang="en|es"><i class="lang-tick"></i> Español</li>
+                    <li data-lang="en|fr"><i class="lang-tick"></i> Français</li>
+                    <li data-lang="en|de"><i class="lang-tick"></i> Deutsch</li>
+                    <li data-lang="en|it"><i class="lang-tick"></i> Italiano</li>
+                    <li data-lang="en|pt"><i class="lang-tick"></i> Português</li>
+                    <li data-lang="en|nl"><i class="lang-tick"></i> Nederlands</li>
+                    <li data-lang="en|ru"><i class="lang-tick"></i> Русский</li>
+                    <li data-lang="en|ar"><i class="lang-tick"></i> العربية</li>
+                    <li data-lang="en|zh-CN"><i class="lang-tick"></i> 中文 (简体)</li>
+                    <li data-lang="en|zh-TW"><i class="lang-tick"></i> 中文 (繁體)</li>
+                    <li data-lang="en|ja"><i class="lang-tick"></i> 日本語</li>
+                    <li data-lang="en|ko"><i class="lang-tick"></i> 한국어</li>
+                    <li data-lang="en|hi"><i class="lang-tick"></i> हिन्दी</li>
+                    <li data-lang="en|tr"><i class="lang-tick"></i> Türkçe</li>
+                    <li data-lang="en|sw"><i class="lang-tick"></i> Swahili</li>
+                    <li data-lang="en|yo"><i class="lang-tick"></i> Yorùbá</li>
+                    <li data-lang="en|ha"><i class="lang-tick"></i> Hausa</li>
+                    <li data-lang="en|ig"><i class="lang-tick"></i> Igbo</li>
+                </ul>
+            </div>
+        </div>
+        {{-- Hidden – needed for Google Translate to activate on page --}}
         <div id="google_translate_element"></div>
     </div>
 </div>
@@ -445,14 +547,10 @@ window.smartsupp||(function(d) {
     </div>
 </div>
 
-<!-- Google Translate -->
+<!-- Google Translate – loads translation engine; custom dropdown above controls language -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-    }, 'google_translate_element');
+    new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -477,5 +575,84 @@ function googleTranslateElementInit() {
         mClose.addEventListener('click', closeNav);
         mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
+    })();
+</script>
+
+<script>
+    // ── Custom language selector ──────────────────────────────
+    (function () {
+        const langNames = {
+            'en':'English','es':'Español','fr':'Français','de':'Deutsch',
+            'it':'Italiano','pt':'Português','nl':'Nederlands','ru':'Русский',
+            'ar':'العربية','zh-CN':'中文 (简体)','zh-TW':'中文 (繁體)',
+            'ja':'日本語','ko':'한국어','hi':'हिन्दी','tr':'Türkçe',
+            'sw':'Swahili','yo':'Yorùbá','ha':'Hausa','ig':'Igbo'
+        };
+
+        function getCookieLang() {
+            const m = document.cookie.match('(^|;)\\s*googtrans=([^;]+)');
+            if (!m) return 'en';
+            const p = decodeURIComponent(m[2]).split('/').filter(Boolean);
+            return p[1] === p[0] ? 'en' : (p[1] || 'en'); // /en/en → english
+        }
+
+        const cur      = getCookieLang();
+        const toggle   = document.getElementById('lang-toggle');
+        const dropdown = document.getElementById('lang-dropdown');
+        const label    = document.getElementById('lang-current');
+        const wrapper  = document.getElementById('langSwitcher');
+
+        // Show current language name
+        if (label && langNames[cur]) label.textContent = langNames[cur];
+
+        // Mark active <li>
+        if (dropdown) {
+            dropdown.querySelectorAll('li').forEach(li => {
+                const lang = (li.dataset.lang || '').split('|')[1];
+                const tick = li.querySelector('.lang-tick');
+                if (lang === cur) {
+                    li.classList.add('active');
+                    if (tick) tick.style.visibility = 'visible';
+                } else {
+                    if (tick) tick.style.visibility = 'hidden';
+                }
+            });
+        }
+
+        // Toggle open/close
+        if (toggle && wrapper) {
+            toggle.addEventListener('click', function (e) {
+                e.stopPropagation();
+                const isOpen = wrapper.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', isOpen);
+                // On mobile: position the fixed panel right below the translate bar
+                if (isOpen && window.innerWidth <= 600) {
+                    const bar = document.querySelector('.translate-bar');
+                    if (bar && dropdown) {
+                        dropdown.style.top = (bar.getBoundingClientRect().bottom) + 'px';
+                    }
+                }
+            });
+            document.addEventListener('click', function () {
+                wrapper.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+            });
+            if (dropdown) dropdown.addEventListener('click', e => e.stopPropagation());
+        }
+
+        // Language selection → set cookie → reload
+        if (dropdown) {
+            dropdown.querySelectorAll('li').forEach(li => {
+                li.addEventListener('click', function () {
+                    const pair = this.dataset.lang;
+                    if (!pair) return;
+                    const [from, to] = pair.split('|');
+                    const val = (to === 'en') ? '/en/en' : '/' + from + '/' + to;
+                    document.cookie = 'googtrans=' + val + '; path=/';
+                    document.cookie = 'googtrans=' + val + '; domain=.' + window.location.hostname + '; path=/';
+                    window.location.reload();
+                });
+            });
+        }
     })();
 </script>
