@@ -276,6 +276,37 @@
         @media (max-width: 480px) {
             .container { padding: 0 16px; }
         }
+
+        /* ======================================================
+           GOOGLE TRANSLATE WIDGET
+        ====================================================== */
+        /* Suppress the banner Google Translate injects */
+        .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0 !important; }
+
+        /* Widget wrapper — always visible in header bar */
+        .header-translate {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        #google_translate_element .goog-te-gadget-simple {
+            background: var(--light-gray) !important;
+            border: 1px solid var(--border) !important;
+            border-radius: 20px !important;
+            padding: 5px 12px !important;
+            font-size: 12px !important;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        #google_translate_element .goog-te-gadget-simple span,
+        #google_translate_element .goog-te-menu-value span {
+            color: var(--primary) !important;
+        }
+        #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child {
+            color: var(--accent) !important;
+        }
+        #google_translate_element .goog-te-gadget-simple img { display: none !important; }
     </style>
 </head>
 <!-- Smartsupp Live Chat script -->
@@ -354,6 +385,11 @@ window.smartsupp||(function(d) {
                 </a>
             </div>
 
+            <!-- Google Translate -->
+            <div class="header-translate">
+                <div id="google_translate_element" aria-label="Translate site"></div>
+            </div>
+
             <!-- Mobile Hamburger -->
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
                 <span></span><span></span><span></span>
@@ -387,6 +423,18 @@ window.smartsupp||(function(d) {
         </a>
     </div>
 </div>
+
+<!-- Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
     (function () {
